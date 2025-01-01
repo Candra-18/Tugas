@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { mockData } from '../../utils/mockData';
 import PopupEdit from '../../components/PopupEdit';
-import ShareMenu from '../../components/ShareMenu'; // Import ShareMenu
+import ShareMenu from '../../components/ShareMenu'; 
 
 export default function Leaderboard() {
   const [data, setData] = useState(mockData);
@@ -31,7 +31,7 @@ export default function Leaderboard() {
         break;
     }
     window.open(shareUrl, '_blank');
-    setSharingPlayer(null); // Close share menu after sharing
+    setSharingPlayer(null); 
   };
 
   const handleEdit = (player) => {
@@ -52,13 +52,11 @@ export default function Leaderboard() {
   };
 
   const handleShareMenu = (player) => {
-    setSharingPlayer(player); // Open share menu for the selected player
+    setSharingPlayer(player); 
   };
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Papan Peringkat</h1>
-
       <div className="space-y-4 mb-8">
         {data
           .sort((a, b) => b.skor - a.skor)

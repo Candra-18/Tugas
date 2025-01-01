@@ -4,27 +4,27 @@ const PopupEdit = ({ player, onSave, onCancel }) => {
   const [playerName, setPlayerName] = useState(player.nama);
   const [playerScore, setPlayerScore] = useState(player.skor);
   const [playerPhoto, setPlayerPhoto] = useState(player.url_foto);
-  const [newPhoto, setNewPhoto] = useState(null); // State untuk menyimpan foto baru yang diunggah
+  const [newPhoto, setNewPhoto] = useState(null); 
 
-  // Fungsi untuk menangani perubahan pada input foto
+
   const handlePhotoChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       const fileReader = new FileReader();
       fileReader.onloadend = () => {
-        setNewPhoto(fileReader.result); // Simpan data gambar pratinjau
+        setNewPhoto(fileReader.result); 
       };
-      fileReader.readAsDataURL(file); // Baca file sebagai URL data
+      fileReader.readAsDataURL(file); 
     }
   };
 
-  // Fungsi untuk menyimpan perubahan
+  
   const handleSave = () => {
     const updatedPlayer = {
       ...player,
       nama: playerName,
       skor: playerScore,
-      url_foto: newPhoto || playerPhoto, // Jika foto baru ada, gunakan itu, jika tidak tetap foto lama
+      url_foto: newPhoto || playerPhoto, 
     };
     onSave(updatedPlayer);
   };

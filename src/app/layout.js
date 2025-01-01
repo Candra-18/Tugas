@@ -1,4 +1,3 @@
-// src/app/layout.js
 import './globals.css';
 
 export default function Layout({ children }) {
@@ -12,7 +11,7 @@ export default function Layout({ children }) {
       <body>
         <div className="min-h-screen bg-gray-100">
           <header className="bg-blue-500 p-4 text-white text-center">
-            <h1 className="text-2xl font-bold">Landing Page - Papan Peringkat</h1>
+            <h1 className="text-2xl font-bold">Papan Peringkat</h1>
           </header>
           <main className="p-4">{children}</main>
           <footer className="bg-blue-500 p-4 text-white text-center mt-4">
